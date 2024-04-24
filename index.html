@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="form-container">
+            <fieldset>
+                <legend>Dane</legend>
+                <div class="input-container">
+                    <input type="date" required>
+                    <span>Wybierz date</span>
+                </div>
+                <div class="input-container">
+                    <input type="text" required>
+                    <span>Imię i nazwisko</span>
+                </div>
+                <div class="input-container">
+                    <input type="text" required>
+                    <span>Adres</span>
+                </div>
+                <div class="input-container">
+                    <input type="text" required>
+                    <span>Kod pocztowy</span>
+                </div>
+            </fieldset>
+            
+            <fieldset class="add-new-item">
+                <legend>Przedmiot</legend>
+                <div class="input-container">
+                    <input type="text" class="item-name" required="required">
+                    <span>Nazwa przedmiotu</span>
+                </div>
+                <div class="input-container">
+                    <input type="text" class="amount" required="required">
+                    <span>Ilość</span>
+                </div>
+                <div class="input-container">
+                    <input type="text" class="price" required="required">
+                    <span>Cena</span>
+                </div>
+                <div class="btn-add">Dodaj</div>
+            </fieldset>
+            
+            <div class="table">
+                <div class="tableHead">
+                    <p class="table-name">Nazwa produktu</p>
+                    <p class="table-amount">Ilość</p>
+                    <p class="table-price">Cena</p>
+                    <p class="table-all-price">Łączna cena</p>
+                </div>
+                <div class="tableBody"></div>
+                <div class="tableFooter">
+                    <p class="sum"></p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

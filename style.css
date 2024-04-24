@@ -1,0 +1,144 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+html {
+	font-size: 62.5%;
+}
+
+body {
+	min-height: 100dvh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Montserrat';
+}
+
+.form-container {
+	display: flex;
+	border: 1px solid #444;
+	padding: 8em 6em;
+	gap: 2em;
+	flex-wrap: wrap;
+}
+
+fieldset {
+	display: flex;
+	flex-direction: column;
+	gap: 3.5em;
+	padding: 2em 3em;
+	flex-basis: calc(50% - 1em);
+}
+
+legend {
+	color: #334fb4;
+	font-size: 2.5rem;
+	padding: 0 1em;
+	font-weight: 600;
+}
+
+.input-container {
+	position: relative;
+}
+
+.input-container input {
+	padding: 0.2em 0.4em;
+	border: none;
+	border-bottom: 1px solid #444;
+	font-size: 1.9rem;
+	outline: none;
+	color: #444;
+	width: clamp(15em, 100%, 30em);
+}
+
+.input-container span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 1.9rem;
+	color: #929298;
+	pointer-events: none;
+	padding: 0.2em 0.4em;
+	transition: top 0.5s;
+}
+
+.input-container input:focus ~ span,
+.input-container input:valid ~ span {
+	top: -1.3em;
+	font-size: 1.1rem;
+	color: #334fb4;
+	font-weight: 600;
+}
+
+.input-container input:focus,
+.input-container input:valid {
+	border-color: #334fb4;
+}
+
+.btn-add {
+	font-size: 1.5rem;
+	padding: 0.6em 1.2em;
+	background-color: #334fb4;
+	width: fit-content;
+	color: #eee;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+.table {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	flex-basis: 100%;
+	flex-grow: 1;
+}
+
+.tableHead,
+.body-el {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+    padding: 0 0.7em;
+}
+
+.tableHead{
+    display: none;
+}
+
+.tableFooter{
+    width: 100%;
+}
+
+.body-el {
+	background-color: #f7f8fd;
+	padding: 0.7em;
+	margin: 1em 0;
+	border-radius: 5px;
+}
+
+.table p {
+	color: #334fb4;
+	font-size: 1.4rem;
+	font-weight: 500;
+}
+
+.table-name {
+	min-width: 20em;
+}
+
+.table-amount {
+	min-width: 5em;
+}
+
+.table-price {
+	min-width: 8em;
+}
+
+.table-all, .table-all-price, .sum {
+	min-width: 10em;
+}
+
+.sum{
+    text-align: right;
+}
