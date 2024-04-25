@@ -49,7 +49,7 @@ legend {
 	font-size: 1.9rem;
 	outline: none;
 	color: #444;
-	width: clamp(15em, 100%, 30em);
+	width: 100%;
 }
 
 .input-container span {
@@ -141,4 +141,32 @@ legend {
 
 .sum{
     text-align: right;
+}
+
+input[type="number"]{
+	appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button{
+	appearance: none;
+}
+
+.currencies{
+	display: flex;
+	gap: 10px;
+}
+
+.currency{
+	padding: 7px 14px;
+	font-size: 1.6rem;
+	color: #333;
+	background-color: #f7f8fd;
+	border-radius: 5px;
+	cursor: pointer;
+	border: 2px solid transparent;
+}
+
+.active{
+	border: 2px solid #334fb4;;
 }

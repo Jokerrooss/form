@@ -15,7 +15,7 @@
             <fieldset>
                 <legend>Dane</legend>
                 <div class="input-container">
-                    <input type="date" required>
+                    <input type="text" class="data" required>
                     <span>Wybierz date</span>
                 </div>
                 <div class="input-container">
@@ -24,11 +24,15 @@
                 </div>
                 <div class="input-container">
                     <input type="text" required>
-                    <span>Adres</span>
+                    <span>Ulica</span>
                 </div>
                 <div class="input-container">
                     <input type="text" required>
                     <span>Kod pocztowy</span>
+                </div>
+                <div class="input-container">
+                    <input type="text" required>
+                    <span>Miasto</span>
                 </div>
             </fieldset>
             
@@ -39,12 +43,16 @@
                     <span>Nazwa przedmiotu</span>
                 </div>
                 <div class="input-container">
-                    <input type="text" class="amount" required="required">
+                    <input type="number" class="amount" required="required">
                     <span>Ilość</span>
                 </div>
                 <div class="input-container">
-                    <input type="text" class="price" required="required">
+                    <input type="number" class="price" required="required">
                     <span>Cena</span>
+                </div>
+                <div class="input-container currencies">
+                    <div class="currency pln active">PLN</div>
+                    <div class="currency eur">EURO</div>
                 </div>
                 <div class="btn-add">Dodaj</div>
             </fieldset>
