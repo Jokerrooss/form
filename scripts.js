@@ -9,6 +9,8 @@ const data = document.querySelector('.data')
 const pln = document.querySelector('.pln')
 const eur = document.querySelector('.eur')
 const currency = document.querySelectorAll('.currency')
+const methods = document.querySelectorAll('.method');
+
 
 
 
@@ -56,12 +58,16 @@ const addProduct = () => {
     const createAmount = createElementWithClass('p', 'table-amount', amount.value);
     const createPrice = createElementWithClass('p', 'table-price', price.value + ' ' + curr);
     const createFullPrice = createElementWithClass('p', 'table-all', (amount.value * price.value)+ ' ' + curr);
+    const createDivForP = createElementWithClass('div', 'par-container')
+    const createDelBtn = createElementWithClass('p', 'del-btn')
+    createDelBtn.innerHTML = '&times;'
 
+    createDivForP.append(createDelBtn)
     tableHead.style.display = 'flex'
 
     createTable.classList.add('body-el')
 
-    createTable.append(createName, createAmount, createPrice, createFullPrice);
+    createTable.append(createName, createAmount, createPrice, createFullPrice, createDivForP);
     tableBody.append(createTable)
 
     const allPrices = document.querySelectorAll('.table-all');
@@ -82,6 +88,8 @@ const addProduct = () => {
     price.value = ''
 }
 
+
+
 const updateSumText = () => {
     const sumTextParts = [];
 
@@ -95,9 +103,53 @@ const updateSumText = () => {
 }
 
 
+
+const updateSumAfterDelete = (row) => {
+    const fullPriceText = row.querySelector('.table-all').textContent;
+    const [priceValue, currency] = fullPriceText.split(' ');
+
+    totals[currency] -= parseFloat(priceValue);
+    updateSumText();
+};
+
+methods.forEach(method => {
+    method.addEventListener('click', () => {
+        methods.forEach(m => m.classList.remove('active'));
+        method.classList.add('active');
+    });
+});
+
+
 btnAdd.addEventListener('click', () => {
     if(itemName.value != '' && amount.value != '' && price.value != ''){
         addProduct()
     }
     
 })
+
+tableBody.addEventListener('click', (event) => {
+    if (event.target.classList.contains('del-btn')) {
+        const row = event.target.closest('.body-el');
+        row.remove();
+        updateSumAfterDelete(row);
+    }
+});
+
+const canvas = document.querySelector('.signature-pad')
+const resizeCanvas = () => {
+    const ratio = Math.max(1, 1)
+    canvas.width = canvas.offsetWidth * ratio
+    canvas.height = canvas.offsetHeight * ratio
+    canvas.getContext('2d').scale(ratio, ratio)
+}
+window.onresize = resizeCanvas
+resizeCanvas()
+
+const signaturePad = new SignaturePad(canvas)
+document.querySelector('.clear-btn').addEventListener('click', function(){
+    signaturePad.clear();
+})
+
+
+
+

@@ -1,78 +1,98 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/signature_pad/1.3.4/signature_pad.js" integrity="sha512-j36pYCzm3upwGd6JGq6xpdthtxcUtSf5yQJSsgnqjAsXtFT84WH8NQy9vqkv4qTV9hK782TwuHUTSwo2hRF+/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    
 </head>
+
 <body>
     <main>
         <div class="form-container">
-            <fieldset>
-                <legend>Dane</legend>
-                <div class="input-container">
-                    <input type="text" class="data" required>
-                    <span>Wybierz date</span>
-                </div>
-                <div class="input-container">
-                    <input type="text" required>
-                    <span>Imię i nazwisko</span>
-                </div>
-                <div class="input-container">
-                    <input type="text" required>
-                    <span>Ulica</span>
-                </div>
-                <div class="input-container">
-                    <input type="text" required>
-                    <span>Kod pocztowy</span>
-                </div>
-                <div class="input-container">
-                    <input type="text" required>
-                    <span>Miasto</span>
-                </div>
-            </fieldset>
-            
-            <fieldset class="add-new-item">
-                <legend>Przedmiot</legend>
-                <div class="input-container">
-                    <input type="text" class="item-name" required="required">
-                    <span>Nazwa przedmiotu</span>
-                </div>
-                <div class="input-container">
-                    <input type="number" class="amount" required="required">
-                    <span>Ilość</span>
-                </div>
-                <div class="input-container">
-                    <input type="number" class="price" required="required">
-                    <span>Cena</span>
-                </div>
-                <div class="input-container currencies">
-                    <div class="currency pln active">PLN</div>
-                    <div class="currency eur">EURO</div>
-                </div>
-                <div class="btn-add">Dodaj</div>
-            </fieldset>
-            
+            <div class="main-form">
+                <fieldset>
+                    <legend>Dane</legend>
+                    <div class="input-container">
+                        <input type="text" class="data" required>
+                        <span>Wybierz date</span>
+                    </div>
+                    <div class="input-container">
+                        <input type="text" required>
+                        <span>Imię i nazwisko</span>
+                    </div>
+                    <div class="input-container">
+                        <input type="text" required>
+                        <span>Ulica</span>
+                    </div>
+                    <div class="input-container">
+                        <input type="text" required>
+                        <span>Kod pocztowy</span>
+                    </div>
+                    <div class="input-container">
+                        <input type="text" required>
+                        <span>Miasto</span>
+                    </div>
+                </fieldset>
+
+                <fieldset class="add-new-item">
+                    <legend>Przedmiot</legend>
+                    <div class="input-container">
+                        <input type="text" class="item-name" required="required">
+                        <span>Nazwa przedmiotu</span>
+                    </div>
+                    <div class="input-container">
+                        <input type="number" class="amount" required="required">
+                        <span>Ilość</span>
+                    </div>
+                    <div class="input-container">
+                        <input type="number" class="price" required="required">
+                        <span>Cena</span>
+                    </div>
+                    <div class="input-container currencies">
+                        <div class="currency pln active">PLN</div>
+                        <div class="currency eur">EURO</div>
+                    </div>
+                    <div class="btn-add">Dodaj</div>
+                </fieldset>
+            </div>
+
             <div class="table">
                 <div class="tableHead">
                     <p class="table-name">Nazwa produktu</p>
                     <p class="table-amount">Ilość</p>
                     <p class="table-price">Cena</p>
                     <p class="table-all-price">Łączna cena</p>
+                    <p class="table-action">Akcja</p>
                 </div>
                 <div class="tableBody"></div>
                 <div class="tableFooter">
                     <p class="sum"></p>
                 </div>
             </div>
-
+            <div class="input-container methods">
+                <div class="method active">Przelew</div>
+                <div class="method">Blik</div>
+                <div class="method">Gotówka</div>
+                <div class="method">Paypal</div>
+            </div>
+            <fieldset class="signature-wrapper">
+                <legend>Podpis</legend>
+                <canvas class="signature-pad"></canvas>
+            </fieldset>
+            <div class="clear-btn-container">
+                <div class="clear-btn">Wyczyść</div>
+            </div>
         </div>
     </main>
 
     <script src="scripts.js"></script>
 </body>
+
 </html>

@@ -17,10 +17,32 @@ body {
 
 .form-container {
 	display: flex;
+	flex-direction: column;
+	max-height: 80vh;
+	overflow-y: auto;
 	border: 1px solid #444;
 	padding: 8em 6em;
 	gap: 2em;
-	flex-wrap: wrap;
+}
+
+.form-container::-webkit-scrollbar {
+	width: 8px; /* Szerokość paska przewijania */
+}
+
+/* Styl dla wypełnienia paska przewijania */
+.form-container::-webkit-scrollbar-thumb {
+	background-color: #334fb4;; /* Kolor paska przewijania */
+	border-radius: 20px;
+}
+
+/* Styl dla tła paska przewijania */
+.form-container::-webkit-scrollbar-track {
+	background-color: #f0f0f0; /* Kolor tła paska przewijania */
+}
+
+.main-form {
+	display: flex;
+	gap: 2em;
 }
 
 fieldset {
@@ -28,7 +50,7 @@ fieldset {
 	flex-direction: column;
 	gap: 3.5em;
 	padding: 2em 3em;
-	flex-basis: calc(50% - 1em);
+	width: 50%;
 }
 
 legend {
@@ -76,7 +98,7 @@ legend {
 	border-color: #334fb4;
 }
 
-.btn-add {
+.btn-add, .clear-btn {
 	font-size: 1.5rem;
 	padding: 0.6em 1.2em;
 	background-color: #334fb4;
@@ -99,15 +121,15 @@ legend {
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
-    padding: 0 0.7em;
+	padding: 0 0.7em;
 }
 
-.tableHead{
-    display: none;
+.tableHead {
+	display: none;
 }
 
-.tableFooter{
-    width: 100%;
+.tableFooter {
+	width: 100%;
 }
 
 .body-el {
@@ -135,29 +157,73 @@ legend {
 	min-width: 8em;
 }
 
-.table-all, .table-all-price, .sum {
+.table-all,
+.table-all-price,
+.sum {
 	min-width: 10em;
 }
-
-.sum{
-    text-align: right;
+.table-action {
+	font-size: 1.4rem;
+	min-width: 4em;
 }
 
-input[type="number"]{
+.sum {
+	text-align: right;
+}
+
+p.edit-btn,
+p.del-btn {
+	cursor: pointer;
+}
+
+.par-container {
+	display: flex;
+	justify-content: end;
+	font-size: 1.4rem;
+	min-width: 4em;
+}
+
+p.del-btn {
+	width: fit-content;
+	color: #d21f3d;
+	font-weight: 600;
+	opacity: 0.6;
+	transition: opacity 0.3s;
+}
+
+p.del-btn:hover {
+	opacity: 1;
+}
+
+p.edit-btn {
+	color: #26ae14;
+}
+.div-action {
+	min-width: 4em;
+	font-size: 1.4rem;
+	display: flex;
+	gap: 10px;
+	justify-content: start;
+	align-items: start;
+}
+
+input[type='number'] {
 	appearance: textfield;
 }
 
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button{
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
 	appearance: none;
 }
 
-.currencies{
+.currencies,
+.methods {
 	display: flex;
 	gap: 10px;
 }
 
-.currency{
+.currency,
+.method {
 	padding: 7px 14px;
 	font-size: 1.6rem;
 	color: #333;
@@ -167,6 +233,23 @@ input[type="number"]::-webkit-inner-spin-button{
 	border: 2px solid transparent;
 }
 
-.active{
-	border: 2px solid #334fb4;;
+.active {
+	border: 2px solid #334fb4;
+}
+
+.signature-wrapper {
+	width: 100%;
+	height: 300px;
+	padding: 0;
+}
+
+.signature-wrapper legend{
+	margin-left: 1em;
+}
+
+.signature-pad {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	background-color: #ffffff;
 }
