@@ -21,7 +21,7 @@ body {
 	max-height: 80vh;
 	overflow-y: auto;
 	border: 1px solid #444;
-	padding: 8em 6em;
+	padding: 4em;
 	gap: 2em;
 }
 
@@ -31,7 +31,7 @@ body {
 
 /* Styl dla wypełnienia paska przewijania */
 .form-container::-webkit-scrollbar-thumb {
-	background-color: #334fb4;; /* Kolor paska przewijania */
+	background-color: #334fb4; /* Kolor paska przewijania */
 	border-radius: 20px;
 }
 
@@ -98,7 +98,9 @@ legend {
 	border-color: #334fb4;
 }
 
-.btn-add, .clear-btn {
+.btn-add,
+.clear-btn,
+.generate-btn {
 	font-size: 1.5rem;
 	padding: 0.6em 1.2em;
 	background-color: #334fb4;
@@ -109,7 +111,7 @@ legend {
 }
 
 .table {
-	display: flex;
+	display: none;
 	flex-direction: column;
 	width: 100%;
 	flex-basis: 100%;
@@ -124,9 +126,6 @@ legend {
 	padding: 0 0.7em;
 }
 
-.tableHead {
-	display: none;
-}
 
 .tableFooter {
 	width: 100%;
@@ -145,19 +144,23 @@ legend {
 	font-weight: 500;
 }
 
-.table-name {
+.table-name,
+.table-name2 {
 	min-width: 20em;
 }
 
-.table-amount {
+.table-amount,
+.table-amount2 {
 	min-width: 5em;
 }
 
-.table-price {
+.table-price,
+.table-price2 {
 	min-width: 8em;
 }
 
 .table-all,
+.table-all2,
 .table-all-price,
 .sum {
 	min-width: 10em;
@@ -233,17 +236,16 @@ input[type='number']::-webkit-inner-spin-button {
 	border: 2px solid transparent;
 }
 
-.active {
+.active, .active-method {
 	border: 2px solid #334fb4;
 }
 
 .signature-wrapper {
 	width: 100%;
-	height: 300px;
 	padding: 0;
 }
 
-.signature-wrapper legend{
+.signature-wrapper legend {
 	margin-left: 1em;
 }
 
@@ -252,4 +254,9 @@ input[type='number']::-webkit-inner-spin-button {
 	height: 100%;
 	padding: 0;
 	background-color: #ffffff;
+}
+
+.btns-container {
+	display: flex;
+	gap: 1em;
 }
